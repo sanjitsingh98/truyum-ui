@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="styling.css"/>
+<title>Edit Menu</title>
+</head>
+<body>
+<header>
+<h1 id="page-title">truYum</h1>
+<img src="logo.png">
+<nav id="page-nav"><a href="menu-item-list-admin.html">Menu</a>
+</nav>
+</header>
+<section>
+
+<form  onsubmit=" return display()" action="edit-menu-item-status.html" >
+<table align="center">
+<tr><th><h1>Edit Menu Item</h1></th></tr>
+<tr><td>Name</td></tr>
+<tr><td><input type="text" id ="name"></td></tr>
+
+<tr>
+<td>Price(Rs.)</td>
+<td>Active</td>
+<td>Date of Launch</td>
+<td>Category</td>
+</tr>
+
+<tr>
+<td>
+<input type="number" id="num" min="1">
+</td>
+<td>
+<input type="radio" id="active-val" value="Yes" name="val" checked> <label for="Yes">Yes</label>
+<input type="radio" id="active-val2"  value="No" name="val"> <label for="No">No</label> <br></td>
+<td> <input type="date" id="date"></td> 
+<td> <select id="menu-options" > 
+<option value="Pre">Main Course</option> 
+<option value="Post">Starters</option>
+<option value="Post">Desserts</option>
+<option value="Post">Drinks</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" checked> Free Delivery</td>
+</tr>
+<tr>
+<td><input type="submit" value="SAVE"></td>
+</tr>										  
+</table>
+</form>
+
+</section>
+<footer>Copyright &copy; 2020</footer>
+</body>
+
+<script type="text/javascript"> 
+function display()                                    
+{ 
+    var name = document.getElementById("name").value; 
+	var number = document.getElementById("num").value;
+	var date = document.getElementById("date").value; 
+
+    if (name == "")                                  
+    { 
+        window.alert("Please enter your Name"); 
+        return false; 
+    } 
+    if(name.length<2 || name.length>65)
+	{
+	    window.alert("name length is not correct");
+	    return false;
+    }
+	if (number == "")                                  
+    { 
+        window.alert("Please enter Price."); 
+        return false; 
+    } 
+
+	if (date == "")                                  
+    { 
+        window.alert("Please enter date.");  
+        return false; 
+    } 
+	else
+	{
+	window.alert("Editing Done.");
+	return true;
+	}
+}
+</script> 
+</html>
